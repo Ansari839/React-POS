@@ -1,17 +1,10 @@
-const isProd = process.env.NODE_ENV === "production";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  assetPrefix: isProd ? "https://ansari839.github.io/React-POS/" : undefined,
-  basePath: "/React-POS", // This ensures the correct routing on GitHub Pages
+  basePath: "/React-POS", // Your repo name
+  assetPrefix: "/React-POS/", // Your repo name
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-    ],
+    unoptimized: true, // For static export
   },
 };
 
