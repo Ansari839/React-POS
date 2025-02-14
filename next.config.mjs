@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  assetPrefix: "./", // Ensure assets are loaded from the correct relative path
+  basePath: "/React-POS", // Replace with your repo name
   images: {
     remotePatterns: [
       {
