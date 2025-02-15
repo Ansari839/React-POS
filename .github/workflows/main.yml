@@ -1,4 +1,43 @@
-name: Next.js Portfolio CI/CD
+# name: Next.js Portfolio CI/CD
+
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
+
+# permissions:
+#   contents: write
+
+# jobs:
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v3
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 20 # Latest LTS version
+#           cache: "npm"
+
+#       - name: Install Dependencies
+#         run: npm install
+
+#       # - name: Build Next.js Project
+#       #   run: npm run build
+
+#       # - name: Create .nojekyll file
+#       #   run: touch out/.nojekyll
+
+#       - name: Deploy to GitHub Pages
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           branch: gh-pages
+#           folder: out
+
+name: Next.js CI/CD
 
 on:
   push:
@@ -6,10 +45,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,20 +58,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # Latest LTS version
+          node-version: 20
           cache: "npm"
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Next.js Project
-        run: npm run build
-
-      - name: Create .nojekyll file
-        run: touch out/.nojekyll
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
         with:
-          branch: gh-pages
-          folder: out
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
