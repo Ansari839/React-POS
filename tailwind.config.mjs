@@ -8,8 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        // cusblack: "rgb(var(--black) / <alpha-value>)",
+        // cuswhite: "rgb(var(--white) / <alpha-value>)",
       },
     },
   },
