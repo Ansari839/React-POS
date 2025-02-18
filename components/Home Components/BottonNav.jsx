@@ -13,7 +13,7 @@ const BottonNav = () => {
         <button className='flex items-center justify-center text-[#ababab] w-[200px]'><CiCircleMore className='inline mr-2' size={20} /> More</button>
         <button className='absolute bottom-6 bg-[#F6B100] text-[#f5f5f5] rounded-full p-3 items-center'>
             <BiSolidDish  size={30} />
-        </button>
+        </button>  
     </div>
   )
 }
