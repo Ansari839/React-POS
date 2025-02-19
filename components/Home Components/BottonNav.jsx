@@ -11,7 +11,7 @@ const BottonNav = () => {
         <button className='flex items-center justify-center text-[#ababab] w-[200px]'><MdOutlineReorder className='inline mr-2' size={20} /> Orders</button>
         <button className='flex items-center justify-center text-[#ababab] w-[200px]'><MdTableBar className='inline mr-2' size={20} /> Tables</button>
         <button className='flex items-center justify-center text-[#ababab] w-[200px]'><CiCircleMore className='inline mr-2' size={20} /> More</button>
-        <button className='absolute bottom-6 bg-[#F6B100] text-[#f5f5f5] rounded-full p-3 items-center'>
+        <button className='absolute bottom-6 bg-[#F6B100] text-[#f5f5f5] rounded-full p-5 items-center'>
             <BiSolidDish  size={30} />
         </button>  
     </div>

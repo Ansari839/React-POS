@@ -1,6 +1,8 @@
 import BottonNav from "@/components/Home Components/BottonNav";
+import Dishes from "@/components/Home Components/Dishes";
 import Greetings from "@/components/Home Components/Greetings";
 import MiniCard from "@/components/Home Components/MiniCard";
+import RecentOrder from "@/components/Home Components/RecentOrder";
 import {BsCashCoin} from 'react-icons/bs';
 import {GrInProgress} from 'react-icons/gr';
 
@@ -16,10 +18,11 @@ export default function Home() {
          <MiniCard title="Total Earnings" icon={<BsCashCoin />} number={512} footerNum={1.6} />
           <MiniCard title="In Progress" icon={<GrInProgress />} number={16} footerNum={3.6} />
         </div>
+        <RecentOrder />
       </div>
       {/* Right Section */}
-      <div className="flex-[2] bg-blue-600">
-        Right
+      <div className="flex-[2]">
+        <Dishes />
       </div>
       <BottonNav /> 
     </div>
